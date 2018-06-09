@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <div *ngIf="conteudo">
+
+
+        <h1>
+          {{ conteudo.title.rendered }}
+          
+          {{ conteudo.acf.preco }}
+        </h1>
+
+        
+        <img  *ngIf="!conteudo.acf.fotos == 0" class="card-img-top" src="{{conteudo.acf.fotos}}" alt="Card image cap">
+
+        <p [innerHTML]="conteudo.content.rendered"></p>
+
+      </div>
+
+    </div>
+  </div>
+</div>
