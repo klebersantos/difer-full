@@ -11,8 +11,11 @@ import { ApiService } from '../../api.service';
 export class ConteudoPaginaComponent {
 
 
-  private conteudo: any = [];
-  carregado: boolean = false;
+  conteudo: any = undefined;
+
+  private items: any = [];
+  carregado: boolean = true;
+  
   constructor(
     public http: HttpClient,
     public api: ApiService,
@@ -28,8 +31,17 @@ export class ConteudoPaginaComponent {
       api.carregar_conteudo_pages(parametros['id'])
         .subscribe(data => {
 
+          var idpagina = parametros['id']
+          this.carregado = false;
           this.conteudo = data;
-          this.carregado = true;
+          var paginas = this.conteudo;
+          var i;
+          for (i = 0; i < paginas.length; i++){
+            if (paginas[i].id == idpagina) {
+              console.log(paginas[i]);
+              this.conteudo = paginas[i];
+            }
+          }
 
         })
 

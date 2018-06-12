@@ -12,7 +12,7 @@ export class HomeComponent {
   
   private items: any = [];
   carregado: boolean = false;
-  constructor(public http: HttpClient, public api: ApiService,  
+  constructor(public HttpClient: HttpClient, public api: ApiService,  
   ) { 
  
   }
@@ -21,7 +21,7 @@ export class HomeComponent {
 
 
   ngOnInit(): void {
-    this.api.get('wp/v2/posts/').subscribe((data: any) => {
+    this.api.get('posts.json/').subscribe((data: any) => {
       this.items = data;
       this.carregado = true;
       console.log(data);

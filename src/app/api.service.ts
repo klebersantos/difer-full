@@ -8,7 +8,7 @@ export class ApiService {
 
   
 
-  private API_URL: string = 'http://localhost/difertec_app/wp-json/';
+  private API_URL: string = 'assets/data/';
 
   constructor(public http: HttpClient) {
     console.log('Hello ApiProvider Provider');
@@ -18,13 +18,13 @@ export class ApiService {
   public carregar_conteudo_pages( id: string ){
      
     
-    return this.get(`wp/v2/pages/${ id }`);
+    return this.get(`pages.json/`);
    
   }
   
   public carregar_conteudo( id: string ){
      
-    return this.get(`wp/v2/posts/${ id }`);
+    return this.get(`posts.json/`);
     
    
   }

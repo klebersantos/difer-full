@@ -12,7 +12,7 @@
         </h1>
 
         
-        <img  *ngIf="!conteudo.acf.fotos == 0" class="card-img-top" src="{{conteudo.acf.fotos}}" alt="Card image cap">
+        <img  *ngIf="!conteudo.acf.fotos == 0" class="card-img-top" [src]="conteudo.acf.fotos" alt="Card image cap">
 
         <p [innerHTML]="conteudo.content.rendered"></p>
 

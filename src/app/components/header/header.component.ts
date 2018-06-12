@@ -14,7 +14,7 @@ export class HeaderComponent {
   constructor(public http: HttpClient, public api: ApiService) { }
 
   ngOnInit(): void {
-    this.api.get('wp/v2/pages/').subscribe((data: any) => {
+    this.api.get('pages.json/').subscribe((data: any) => {
       this.paginas = data;
       this.carregado = true;
       console.log(data);
