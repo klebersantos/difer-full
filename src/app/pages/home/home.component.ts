@@ -10,7 +10,7 @@ import { ApiService } from '../../api.service';
 export class HomeComponent {
 
   
-  private items: any = [];
+  public items: any = [];
   carregado: boolean = false;
   constructor(public HttpClient: HttpClient, public api: ApiService,  
   ) { 

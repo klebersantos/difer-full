@@ -9,7 +9,7 @@ import { ApiService } from '../../api.service';
 })
 export class HeaderComponent {
 
-  private paginas: any = [];
+  public paginas: any = [];
   carregado: boolean = false;
   constructor(public http: HttpClient, public api: ApiService) { }
 
