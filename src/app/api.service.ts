@@ -18,13 +18,13 @@ export class ApiService {
   public carregar_conteudo_pages( id: string ){
      
     
-    return this.get(`pages.json/`);
+    return this.get(`pages.json`);
    
   }
   
   public carregar_conteudo( id: string ){
      
-    return this.get(`posts.json/`);
+    return this.get(`posts.json`);
     
    
   }
