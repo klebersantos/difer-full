@@ -2,12 +2,12 @@
 
   <div class="row">
 
-    <div class="col-12 col-md-4" *ngFor="let p of items">
+    <div class="col-12 col-md-4" *ngFor="let p of items | paginate: { itemsPerPage: 3, currentPage: span }">
 
       <div class="card">
-        <img  *ngIf="!p.acf.fotos == 0" class="card-img-top" src="{{p.acf.fotos}}" alt="Card image cap">
+        <a [routerLink]="['/conteudo', p.id ]"><img  *ngIf="!p.acf.fotos == 0" class="card-img-top" src="{{p.acf.fotos}}" alt="{{p.title.rendered}}"></a>
         <div class="card-body">
-          <h5 class="card-title">{{p.title.rendered}}</h5>
+          <a [routerLink]="['/conteudo', p.id ]"><h5 class="card-title">{{p.title.rendered}}</h5></a>
           <p class="card-text" [innerHTML]="p.content.rendered"></p>
           <a [routerLink]="['/conteudo', p.id ]" class="btn btn-primary">ver mais</a>
         </div>
@@ -15,6 +15,8 @@
 
 
     </div>
+
+    <pagination-controls (pageChange)="span =$event"></pagination-controls>
 
   </div>
 

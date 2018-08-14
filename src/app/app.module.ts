@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ConteudoComponent } from './components/conteudo/conteudo.component';
 import { ConteudoPaginaComponent } from './components/conteudo-pagina/conteudo-pagina.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ConteudoPaginaComponent } from './components/conteudo-pagina/conteudo-p
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
